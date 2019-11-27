@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Hi, {{ current_user.username }}!</h1>
+
+    {% if users %}
+    <h3>All Users</h3>
+    {% for user in users %}
+    <ul class="list-group-item"><a href="{{ url_for('main.user', username=user.username) }}">{{ user.username }} </a></ul>
+    {% endfor %}
+    {% endif %}
+
+
+    <nav aria-label="...">
+  <ul class="pagination">
+
+      {% if prev_url %}
+    <li class="page-item">
+      <a class="page-link" href="{{ prev_url }}">Previous</a>
+    </li>
+    {% endif %}
+
+      {% if next_url %}
+      <li class="page-item">
+      <a class="page-link" href="{{ next_url }}">Next</a>
+    </li>
+      {% endif %}
+  </ul>
+</nav>
+{% endblock %}
+

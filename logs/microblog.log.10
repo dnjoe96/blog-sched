@@ -1,0 +1,86 @@
+2019-11-25 12:06:36,330 ERROR: Exception on /login [GET] [in /home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/donjoe/Desktop/projects/sched - 01/app/auth/routes.py", line 53, in login
+    return render_template('auth/login.html', title='Sign In', form=form)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/donjoe/Desktop/projects/sched - 01/app/templates/auth/login.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/donjoe/Desktop/projects/sched - 01/app/templates/base.html", line 21, in top-level template code
+    {% block content %} {% endblock %}
+  File "/home/donjoe/Desktop/projects/sched - 01/app/templates/auth/login.html", line 11, in block "content"
+    {{ form.username.label }} <br>
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/wtforms/fields/core.py", line 393, in __html__
+    return self()
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/wtforms/fields/core.py", line 402, in __call__
+    return widgets.HTMLString('<label %s>%s</label>' % (attributes, text or self.text))
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask_babel/speaklater.py", line 23, in __str__
+    return text_type(self._func(*self._args, **self._kwargs))
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask_babel/__init__.py", line 552, in gettext
+    t = get_translations()
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask_babel/__init__.py", line 223, in get_translations
+    babel = current_app.extensions['babel']
+KeyError: 'babel'
+2019-11-25 12:06:39,590 ERROR: Exception on /login [GET] [in /home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/donjoe/Desktop/projects/sched - 01/app/auth/routes.py", line 53, in login
+    return render_template('auth/login.html', title='Sign In', form=form)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/donjoe/Desktop/projects/sched - 01/app/templates/auth/login.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/donjoe/Desktop/projects/sched - 01/app/templates/base.html", line 21, in top-level template code
+    {% block content %} {% endblock %}
+  File "/home/donjoe/Desktop/projects/sched - 01/app/templates/auth/login.html", line 11, in block "content"
+    {{ form.username.label }} <br>
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/wtforms/fields/core.py", line 393, in __html__
+    return self()
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/wtforms/fields/core.py", line 402, in __call__
+    return widgets.HTMLString('<label %s>%s</label>' % (attributes, text or self.text))
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask_babel/speaklater.py", line 23, in __str__
+    return text_type(self._func(*self._args, **self._kwargs))
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask_babel/__init__.py", line 552, in gettext
+    t = get_translations()
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask_babel/__init__.py", line 223, in get_translations
+    babel = current_app.extensions['babel']
+KeyError: 'babel'

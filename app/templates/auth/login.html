@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> Sign in </h1>
+{% from 'includes/_formhelper.html' import render_field %}
+<form action="" method="post" novalidate>
+    <!-- this field is for the WTF security field -->
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.username.label }} <br>
+        {{ form.username(size=32) }}<br>
+        <!--adding error messages-->
+        {% for error in form.username.errors %}
+        <span style="color: red">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.password.label }} <br>
+        {{ form.password(size=32) }}<br>
+        <!--adding error messages-->
+        {% for error in form.username.errors %}
+        <span style="color: red">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p> {{ form.remember_me() }} {{ form.remember_me.label }} </p>
+    <p>{{ form.submit() }}</p>
+    <p>New User? <a href="{{ url_for('auth.register') }}">Click to Register!</a></p>
+</form>
+<p>
+    Forgot your password?
+    <a href="{{ url_for('auth.reset_password_request') }}">Click to Reset password</a>
+</p>
+
+{% endblock %}

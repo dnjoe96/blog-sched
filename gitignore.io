@@ -17,10 +17,13 @@ __pycache__/
 *.so
 
 # Distribution / packaging
-
-.Python
 venv/
+
+# bootstrap files
 static/
+
+# virtual environment
+.Python
 build/
 develop-eggs/
 dist/

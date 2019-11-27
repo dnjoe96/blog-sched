@@ -2,7 +2,8 @@ alembic==1.2.1
 Babel==2.7.0
 blinker==1.4
 Click==7.0
-dotenv==0.0.5
+# dotenv==0.0.5
+elasticsearch==7.0.5
 Flask==1.1.1
 Flask-Babel==0.12.2
 Flask-Login==0.4.1

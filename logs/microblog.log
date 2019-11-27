@@ -33,3 +33,9 @@ Traceback (most recent call last):
 AttributeError: 'Flask' object has no attribute 'elasticsearch'
 2019-11-25 22:22:00,347 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched - 01/app/__init__.py:71]
 2019-11-27 03:46:10,935 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:71]
+2019-11-27 09:55:08,088 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:71]
+2019-11-27 09:55:08,088 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:89]
+2019-11-27 09:55:08,088 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:89]
+2019-11-27 09:55:16,004 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:71]
+2019-11-27 09:55:16,005 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:89]
+2019-11-27 09:55:16,005 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:89]

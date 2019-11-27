@@ -1,5 +1,10 @@
+I have commented dotenv module in requirements.txt
 
+In the final project, i should removes the bootsrap file and link them online
 
+finish the project it's sound
+
+remove the Js and css links in the base.html
 
 things to work on	
 
@@ -9,4 +14,4 @@ things to work on
 
 4. Elasticsearch for full text search
 
-5. 
+5. implement comments on posts in sched_blog check tutoriaal from https://www.youtube.com/watch?v=FGrIyBDQLPg

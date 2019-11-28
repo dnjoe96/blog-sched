@@ -1,4 +1,4 @@
-2019-11-25 14:07:36,663 ERROR: Exception on /index [POST] [in /home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py:1891]
+2019-11-25 14:18:55,711 ERROR: Exception on /index [POST] [in /home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/urllib3/connection.py", line 157, in _new_conn
     (self._dns_host, self.port), self.timeout, **extra_kw
@@ -37,7 +37,7 @@ Traceback (most recent call last):
     conn = self._new_conn()
   File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/urllib3/connection.py", line 169, in _new_conn
     self, "Failed to establish a new connection: %s" % e
-urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f1f0215a6d8>: Failed to establish a new connection: [Errno 111] Connection refused
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f1f03753dd8>: Failed to establish a new connection: [Errno 111] Connection refused
 
 During handling of the above exception, another exception occurred:
 
@@ -78,4 +78,8 @@ Traceback (most recent call last):
     timeout=timeout,
   File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/elasticsearch/connection/http_urllib3.py", line 250, in perform_request
     raise ConnectionError("N/A", str(e), e)
-elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x7f1f0215a6d8>: Failed to establish a new connection: [Errno 111] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x7f1f0215a6d8>: Failed to establish a new connection: [Errno 111] Connection refused)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x7f1f03753dd8>: Failed to establish a new connection: [Errno 111] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x7f1f03753dd8>: Failed to establish a new connection: [Errno 111] Connection refused)
+2019-11-25 14:22:08,242 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched - 01/app/__init__.py:70]
+2019-11-25 14:26:36,271 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched - 01/app/__init__.py:70]
+2019-11-25 21:48:03,864 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched - 01/app/__init__.py:70]
+2019-11-25 22:01:06,086 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched - 01/app/__init__.py:70]

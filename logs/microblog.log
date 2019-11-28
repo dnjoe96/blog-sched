@@ -1,4 +1,4 @@
-2019-11-25 22:17:58,156 ERROR: Exception on /index [POST] [in /home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py:1891]
+2019-11-27 20:19:31,370 ERROR: Exception on /user/mimi/popup [GET] [in /home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,28 +14,35 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/home/donjoe/Desktop/projects/sched - 01/app/main/routes.py", line 39, in index
-    db.session.commit()
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 1027, in commit
-    self.transaction.commit()
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 501, in commit
-    self.session.dispatch.after_commit(self.session)
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/sqlalchemy/event/attr.py", line 261, in __call__
-    fn(*args, **kw)
-  File "/home/donjoe/Desktop/projects/sched - 01/app/models.py", line 120, in after_commit
-    add_to_index(obj.__tablename__, obj)
-  File "/home/donjoe/Desktop/projects/sched - 01/app/search.py", line 5, in add_to_index
-    if not current_app.elasticsearch:
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/werkzeug/local.py", line 348, in __getattr__
-    return getattr(self._get_current_object(), name)
-AttributeError: 'Flask' object has no attribute 'elasticsearch'
-2019-11-25 22:22:00,347 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched - 01/app/__init__.py:71]
-2019-11-27 03:46:10,935 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:71]
-2019-11-27 09:55:08,088 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:71]
-2019-11-27 09:55:08,088 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:89]
-2019-11-27 09:55:08,088 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:89]
-2019-11-27 09:55:16,004 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:71]
-2019-11-27 09:55:16,005 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:89]
-2019-11-27 09:55:16,005 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:89]
+  File "/home/donjoe/Desktop/projects/sched_blog/app/main/routes.py", line 167, in user_popup
+    return render_template('user_popup.html', user=user)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/donjoe/Desktop/projects/sched_blog/app/templates/user_popup.html", line 16, in template
+    <p>{{ '%(count)d followers', count=user.followers.count() }},
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/parser.py", line 876, in subparse
+    self.stream.expect('variable_end')
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/lexer.py", line 384, in expect
+    self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got '='
+2019-11-27 20:30:53,650 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:71]
+2019-11-27 20:30:53,650 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:89]
+2019-11-27 20:30:53,650 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:89]

@@ -158,3 +158,10 @@ def all_users():
     prev_url = url_for('main.all_users', page=users.prev_num) if users.has_prev else None
 
     return render_template('all_users.html', users=users.items, title='All Users', next_url=next_url, prev_url=prev_url)
+
+
+@bp.route('/user/<username>/popup')
+@login_required
+def user_popup(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    return render_template('user_popup.html', user=user)

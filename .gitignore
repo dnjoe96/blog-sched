@@ -21,7 +21,7 @@ venv
 .env
 # bootstrap files
 app/static
-
+Notes
 # virtual environment
 .Python
 build/

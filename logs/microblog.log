@@ -1,4 +1,4 @@
-2019-11-27 20:19:31,370 ERROR: Exception on /user/mimi/popup [GET] [in /home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py:1891]
+2019-12-04 20:05:51,918 ERROR: Exception on /messages [GET] [in /home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,35 +14,38 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/home/donjoe/Desktop/projects/sched_blog/app/main/routes.py", line 167, in user_popup
-    return render_template('user_popup.html', user=user)
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/home/donjoe/Desktop/projects/sched_blog/app/main/routes.py", line 199, in messages
+    next_url=next_url, prev_url=prev_url)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
   File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
   File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/home/donjoe/Desktop/projects/sched_blog/app/templates/user_popup.html", line 16, in template
-    <p>{{ '%(count)d followers', count=user.followers.count() }},
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 497, in _parse
-    return Parser(self, source, name, encode_filename(filename)).parse()
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/parser.py", line 901, in parse
-    result = nodes.Template(self.subparse(), lineno=1)
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/parser.py", line 876, in subparse
-    self.stream.expect('variable_end')
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/lexer.py", line 384, in expect
-    self.name, self.filename)
-jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got '='
-2019-11-27 20:30:53,650 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:71]
-2019-11-27 20:30:53,650 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:89]
-2019-11-27 20:30:53,650 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:89]
+  File "/home/donjoe/Desktop/projects/sched_blog/app/templates/messages.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/donjoe/Desktop/projects/sched_blog/app/templates/base.html", line 23, in top-level template code
+    {% block content %} {% endblock %}
+  File "/home/donjoe/Desktop/projects/sched_blog/app/templates/messages.html", line 6, in block "content"
+    {% include '_post.html' %}
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: _post.html
+2019-12-04 20:09:11,658 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:71]
+2019-12-04 20:09:11,659 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:89]
+2019-12-04 20:09:11,659 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:89]
+2019-12-04 20:34:14,290 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:71]
+2019-12-04 20:34:14,290 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:89]
+2019-12-04 20:34:14,290 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:89]
+2019-12-04 20:48:03,662 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:71]
+2019-12-04 20:48:03,663 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:89]
+2019-12-04 20:48:03,663 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:89]
+2019-12-04 20:55:48,971 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:71]
+2019-12-04 20:55:48,971 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:89]
+2019-12-04 20:55:48,971 INFO: Microblog startup [in /home/donjoe/Desktop/projects/sched_blog/app/__init__.py:89]

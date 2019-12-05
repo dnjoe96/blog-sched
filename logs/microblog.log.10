@@ -1,4 +1,4 @@
-2019-11-25 12:06:42,563 ERROR: Exception on /login [GET] [in /home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py:1891]
+2019-12-04 09:49:09,739 ERROR: Exception on /send_message/mimi [GET] [in /home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,36 +12,46 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/donjoe/Desktop/projects/sched - 01/app/auth/routes.py", line 53, in login
-    return render_template('auth/login.html', title='Sign In', form=form)
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/donjoe/Desktop/projects/sched_blog/app/main/routes.py", line 182, in send_message
+    return render_template('send_message.html', title='Send Message', form=form, recipient=recipient)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
   File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
   File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/home/donjoe/Desktop/projects/sched - 01/app/templates/auth/login.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/donjoe/Desktop/projects/sched - 01/app/templates/base.html", line 21, in top-level template code
-    {% block content %} {% endblock %}
-  File "/home/donjoe/Desktop/projects/sched - 01/app/templates/auth/login.html", line 11, in block "content"
-    {{ form.username.label }} <br>
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/wtforms/fields/core.py", line 393, in __html__
-    return self()
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/wtforms/fields/core.py", line 402, in __call__
-    return widgets.HTMLString('<label %s>%s</label>' % (attributes, text or self.text))
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask_babel/speaklater.py", line 23, in __str__
-    return text_type(self._func(*self._args, **self._kwargs))
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask_babel/__init__.py", line 552, in gettext
-    t = get_translations()
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask_babel/__init__.py", line 223, in get_translations
-    babel = current_app.extensions['babel']
-KeyError: 'babel'
-2019-11-25 12:06:48,291 ERROR: Exception on /login [GET] [in /home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py:1891]
+  File "/home/donjoe/Desktop/projects/sched_blog/app/templates/send_message.html", line 5, in template
+    <h1>{{ 'Send Message to %(recipient)s', recipient=recipient }}</h1>
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/parser.py", line 268, in parse_block
+    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/parser.py", line 876, in subparse
+    self.stream.expect('variable_end')
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/lexer.py", line 384, in expect
+    self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got '='
+2019-12-04 09:49:26,423 ERROR: Exception on /send_message/mimi [GET] [in /home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -55,32 +65,42 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/donjoe/Desktop/projects/sched - 01/app/auth/routes.py", line 53, in login
-    return render_template('auth/login.html', title='Sign In', form=form)
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/donjoe/Desktop/projects/sched_blog/app/main/routes.py", line 182, in send_message
+    return render_template('send_message.html', title='Send Message', form=form, recipient=recipient)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
   File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
   File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/home/donjoe/Desktop/projects/sched - 01/app/templates/auth/login.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/donjoe/Desktop/projects/sched - 01/app/templates/base.html", line 21, in top-level template code
-    {% block content %} {% endblock %}
-  File "/home/donjoe/Desktop/projects/sched - 01/app/templates/auth/login.html", line 11, in block "content"
-    {{ form.username.label }} <br>
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/wtforms/fields/core.py", line 393, in __html__
-    return self()
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/wtforms/fields/core.py", line 402, in __call__
-    return widgets.HTMLString('<label %s>%s</label>' % (attributes, text or self.text))
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask_babel/speaklater.py", line 23, in __str__
-    return text_type(self._func(*self._args, **self._kwargs))
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask_babel/__init__.py", line 552, in gettext
-    t = get_translations()
-  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/flask_babel/__init__.py", line 223, in get_translations
-    babel = current_app.extensions['babel']
-KeyError: 'babel'
+  File "/home/donjoe/Desktop/projects/sched_blog/app/templates/send_message.html", line 5, in template
+    <h1>{{ 'Send Message to %(recipient)s', recipient=recipient }}</h1>
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/parser.py", line 268, in parse_block
+    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/parser.py", line 876, in subparse
+    self.stream.expect('variable_end')
+  File "/home/donjoe/Desktop/projects/sched/venv/lib/python3.5/site-packages/jinja2/lexer.py", line 384, in expect
+    self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got '='

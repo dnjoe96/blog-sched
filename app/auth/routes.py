@@ -7,7 +7,7 @@
 from flask import render_template, flash, redirect, request, url_for
 from app import db
 from app.auth import bp
-from app.auth.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm
+from app.auth.forms import LoginForm, RegistrationForm, ResetPasswordRequestForm, ResetPasswordForm
 from flask_login import current_user, login_user, logout_user
 from app.models import User
 from werkzeug.urls import url_parse
@@ -28,8 +28,6 @@ def register():
         flash('Congratulations, You are now Registered', 'success')
         return redirect(url_for('auth.login'))
     return render_template('auth/register.html', title='Register', form=form)
-
-
 
 
 @bp.route('/login', methods=['GET', 'POST'])
@@ -59,9 +57,9 @@ def logout():
     return redirect(url_for('main.index'))
 
 
-@bp.route('/reset_password', methods=['GET', 'POST'])
+@bp.route('/reset_password_request', methods=['GET', 'POST'])
 def reset_password_request():
-    if current_user.is_authenticated:     # checking if user is logged in
+    if current_user.is_authenticated:  # checking if user is logged in
         return redirect(url_for('main.index'))
     form = ResetPasswordRequestForm()
     if form.validate_on_submit():
@@ -80,7 +78,8 @@ def reset_password(token):
     user = User.verify_reset_password_token(token)
     if not user:
         return redirect(url_for('main.index'))
-    form = ResetPasswordRequestForm()
+
+    form = ResetPasswordForm()
     if form.validate_on_submit():
         user.set_password(form.password.data)
         db.session.commit()

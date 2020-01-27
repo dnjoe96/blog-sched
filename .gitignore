@@ -9,7 +9,7 @@ instance/*
 
 ### Flask.Python Stack ###
 # Byte-compiled / optimized / DLL files
-__pycache__/
+__pycache__
 *.py[cod]
 *$py.class
 
@@ -38,6 +38,7 @@ parts/
 sdist/
 var/
 wheels/
+logs
 pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
